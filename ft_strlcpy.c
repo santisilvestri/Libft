@@ -1,45 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 10:23:35 by sasilves          #+#    #+#             */
-/*   Updated: 2026/05/27 09:11:50 by sasilves         ###   ########.fr       */
+/*   Created: 2026/05/27 10:45:15 by sasilves          #+#    #+#             */
+/*   Updated: 2026/05/27 11:17:58 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	ft_bzero(void *s, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned char	*ptr;
 	size_t	i;
+	size_t	len;
 
-	ptr = (unsigned char *)s;
+	len = 0;
+	while (src[len])
+		len++;
 	i = 0;
-	while (i < n)
+	if (size > 0)
 	{
-		ptr[i] = 0;
-		i++;
+		while (src[i] && i < size - 1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
+	return (len);
 }
-/* #include <stdio.h>
-#include <strings.h>
 
-void	ft_bzero(void *s, size_t n);
+/* #include <stdio.h>
 
 int	main(void)
 {
-	char	str1[] = "Hola";
-	char	str2[] = "Hola";
+	char test[] = "Hello World";
+	char test2[50];
+	size_t result;
 
-	ft_bzero(str1, 2);
-	bzero(str2, 2);
+	result = ft_strlcpy(test2, test, 3);
 
-	printf("ft_bzero: %d %d %c %c\n", str1[0], str1[1], str1[2], str1[3]);
-	printf("bzero:    %d %d %c %c\n", str2[0], str2[1], str2[2], str2[3]);
-
+	printf("dst: %s\n", test2);
+	printf("return: %zu\n", result);
 	return (0);
 } */

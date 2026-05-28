@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 10:23:15 by sasilves          #+#    #+#             */
-/*   Updated: 2026/05/27 09:53:18 by sasilves         ###   ########.fr       */
+/*   Created: 2026/05/27 11:58:44 by sasilves          #+#    #+#             */
+/*   Updated: 2026/05/28 14:53:00 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_toupper(int c)
 {
-	unsigned char	*ptr;
-	size_t			i;
-
-	i = 0;
-	ptr = (unsigned char *)s;
-	while (i < n)
+	if(c >= 'a' && c <= 'z')
 	{
-		ptr[i] = c;
-		i++;
+		c = c - 32;
 	}
-	return (ptr);
+	return(c);
 }
+/* #include<unistd.h>
 
-/* #include <stdio.h>
-#include <string.h>
-
-int main (void)
+int	main(void)
 {
-	char str[] = "Hello World";
-	char str1[] = "Hello World";
-	memset(str, 'x', 3);
-	ft_memset(str1, 'x', 5);
-	printf("%s\n", str);
-	printf("%s\n", str1);
+	char c;
+
+	c = ft_toupper('a'); 
+	write(1, &c, 1);
+	return (0);	
 } */

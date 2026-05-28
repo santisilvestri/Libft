@@ -1,45 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 10:23:35 by sasilves          #+#    #+#             */
-/*   Updated: 2026/05/27 09:11:50 by sasilves         ###   ########.fr       */
+/*   Created: 2026/05/27 11:23:05 by sasilves          #+#    #+#             */
+/*   Updated: 2026/05/27 11:52:28 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include<stddef.h>
 
-void	ft_bzero(void *s, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned char	*ptr;
 	size_t	i;
+	size_t	j;
 
-	ptr = (unsigned char *)s;
 	i = 0;
-	while (i < n)
-	{
-		ptr[i] = 0;
+	while (i < size && dst[i])
 		i++;
+	j = 0;
+	while (src[j] && i + j + 1 < size)
+	{
+		dst[i + j] = src[j];
+		j++;
 	}
+	if (i < size)
+		dst[i + j] = '\0';
+	while (src[j])
+		j++;
+	return (i + j);
 }
-/* #include <stdio.h>
-#include <strings.h>
 
-void	ft_bzero(void *s, size_t n);
+#include <stdio.h>
 
 int	main(void)
 {
-	char	str1[] = "Hola";
-	char	str2[] = "Hola";
+	char	dst[20] = "Hello ";
+	char	src[] = "My name is Santiago";
+	size_t	ret;
 
-	ft_bzero(str1, 2);
-	bzero(str2, 2);
+	ret = ft_strlcat(dst, src, 20);
 
-	printf("ft_bzero: %d %d %c %c\n", str1[0], str1[1], str1[2], str1[3]);
-	printf("bzero:    %d %d %c %c\n", str2[0], str2[1], str2[2], str2[3]);
-
+	printf("dst: %s\n", dst);
+	printf("return: %zu\n", ret);
 	return (0);
-} */
+}

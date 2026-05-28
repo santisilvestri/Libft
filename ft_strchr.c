@@ -1,45 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 10:23:35 by sasilves          #+#    #+#             */
-/*   Updated: 2026/05/27 09:11:50 by sasilves         ###   ########.fr       */
+/*   Created: 2026/05/28 14:53:31 by sasilves          #+#    #+#             */
+/*   Updated: 2026/05/28 15:23:52 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	ft_bzero(void *s, size_t n)
+char *ft_strchr(const char *s, int c)
 {
-	unsigned char	*ptr;
-	size_t	i;
-
-	ptr = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	int i;
+	
+	i=0;
+	while(s[i])
 	{
-		ptr[i] = 0;
+		if(s[i] == c)
+			return((char *)&s[i]);
 		i++;
 	}
+	if (s[i] == (char)c)
+		return ((char *)&s[i]);
+	return(NULL);
 }
-/* #include <stdio.h>
-#include <strings.h>
 
-void	ft_bzero(void *s, size_t n);
+/* #include <stdio.h>
 
 int	main(void)
 {
-	char	str1[] = "Hola";
-	char	str2[] = "Hola";
+	char	*str;
+	char	*result;
 
-	ft_bzero(str1, 2);
-	bzero(str2, 2);
+	str = "Hola mundo";
 
-	printf("ft_bzero: %d %d %c %c\n", str1[0], str1[1], str1[2], str1[3]);
-	printf("bzero:    %d %d %c %c\n", str2[0], str2[1], str2[2], str2[3]);
+	result = ft_strchr(str, 'l');
+
+	if (result != NULL)
+		printf("Caracter encontrado: %c\n", *result);
+	else
+		printf("Caracter no encontrado\n");
 
 	return (0);
 } */
