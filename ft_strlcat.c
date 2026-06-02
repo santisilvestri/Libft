@@ -6,11 +6,11 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 11:23:05 by sasilves          #+#    #+#             */
-/*   Updated: 2026/05/27 11:52:28 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/01 12:04:29 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
+#include <stddef.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -33,7 +33,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return (i + j);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(void)
 {
@@ -46,4 +46,4 @@ int	main(void)
 	printf("dst: %s\n", dst);
 	printf("return: %zu\n", ret);
 	return (0);
-}
+} */

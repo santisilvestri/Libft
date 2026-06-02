@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/28 14:45:42 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/01 12:05:11 by sasilves         ###   ########.fr       */
+/*   Created: 2026/06/02 16:10:15 by sasilves          #+#    #+#             */
+/*   Updated: 2026/06/02 16:18:31 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include <unistd.h>
+
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (c >= 'A' && c <= 'Z')
+	int	i;
+
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i])
 	{
-		c = c + 32;
+		write(fd, &s[i], 1);
+		i++;
 	}
-	return (c);
 }
 
-/* #include<unistd.h>
+void	ft_putendl_fd(char *s, int fd)
+{
+	if (!s)
+		return ;
+	ft_putstr_fd(s, fd);
+	write(fd, "\n", 1);
+}
 
 int	main(void)
 {
-	char c;
+	char str[] = "Hola mundo";
 
-	c = ft_tolower('J');
-	write(1, &c, 1);
-	return(0);
-} */
+	ft_putendl_fd(str, 1);
+}

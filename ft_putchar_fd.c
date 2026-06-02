@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/28 14:45:42 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/01 12:05:11 by sasilves         ###   ########.fr       */
+/*   Created: 2026/06/02 15:53:27 by sasilves          #+#    #+#             */
+/*   Updated: 2026/06/02 16:09:12 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include <unistd.h>
+
+void	ft_putchar_fd(char c, int fd)
 {
-	if (c >= 'A' && c <= 'Z')
-	{
-		c = c + 32;
-	}
-	return (c);
+	write(fd, &c, 1);
 }
-
-/* #include<unistd.h>
-
-int	main(void)
+/* int main(void)
 {
-	char c;
+	char c = 'a';
 
-	c = ft_tolower('J');
-	write(1, &c, 1);
-	return(0);
+	ft_putchar_fd(c, 1);
+	return (0);
 } */

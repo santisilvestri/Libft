@@ -1,48 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/28 14:53:31 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/01 12:08:10 by sasilves         ###   ########.fr       */
+/*   Created: 2026/06/01 08:25:23 by sasilves          #+#    #+#             */
+/*   Updated: 2026/06/01 12:09:16 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
+	size_t				i;
+	const unsigned char	*str;
+	unsigned char		ch;
 
 	i = 0;
-	while (s[i])
+	str = (const unsigned char *)s;
+	ch = (unsigned char)c;
+	while (i < n)
 	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
+		if (str[i] == ch)
+			return ((void *)&str[i]);
 		i++;
 	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
 	return (NULL);
 }
 
-/* #include <stdio.h>
+/* #include<stdio.h>
 
 int	main(void)
 {
-	char	*str;
+	char	str[] = "Hola mundo";
 	char	*result;
 
-	str = "Hola mundo";
-
-	result = ft_strchr(str, 'l');
+	result = ft_memchr(str, 'm', 10);
 
 	if (result != NULL)
-		printf("Caracter encontrado: %c\n", *result);
+		printf("Encontrado: %c\n", *result);
 	else
-		printf("Caracter no encontrado\n");
+		printf("No encontrado\n");
 
 	return (0);
 } */

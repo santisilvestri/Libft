@@ -1,53 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/28 15:30:57 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/01 12:07:33 by sasilves         ###   ########.fr       */
+/*   Created: 2026/06/01 11:07:43 by sasilves          #+#    #+#             */
+/*   Updated: 2026/06/01 12:06:05 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdlib.h>
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int	i;
+	void			*ptr;
+	size_t			total;
+	unsigned char	*str;
+	size_t			i;
 
+	total = nmemb * size;
+	ptr = malloc(total);
+	if (!ptr)
+		return (NULL);
+	str = (unsigned char *)ptr;
 	i = 0;
-	while (s[i])
-		i++;
-	while (i >= 0)
+	while (i < total)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
+		str[i] = 0;
+		i++;
 	}
-	return (NULL);
+	return (ptr);
 }
 
 /* #include<stdio.h>
 
 int	main(void)
 {
-	char	*str;
-	char	*result;
+	int	*arr;
+	int	i;
 
-	str = "Hola mundo";
-
-	result = ft_strrchr(str, 'k');
-
-	if (result != NULL)
+	arr = ft_calloc(5, sizeof(int));
+	if (arr == NULL)
 	{
-		printf("Caracter encontrado: %c\n", *result);
-		printf("String desde la ultima aparicion: %s\n", result);
+		printf("Error al reservar memoria\n");
+		return (1);
 	}
-	else
+	i = 0;
+	while (i < 5)
 	{
-		printf("Caracter no encontrado\n");
+		printf("arr[%d] = %d\n", i, arr[i]);
+		i++;
 	}
-
+	free(arr);
 	return (0);
 } */

@@ -6,17 +6,17 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 11:58:44 by sasilves          #+#    #+#             */
-/*   Updated: 2026/05/28 14:53:00 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/01 12:04:49 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	if(c >= 'a' && c <= 'z')
+	if (c >= 'a' && c <= 'z')
 	{
 		c = c - 32;
 	}
-	return(c);
+	return (c);
 }
 /* #include<unistd.h>
 
@@ -24,7 +24,7 @@ int	main(void)
 {
 	char c;
 
-	c = ft_toupper('a'); 
+	c = ft_toupper('a');
 	write(1, &c, 1);
-	return (0);	
+	return (0);
 } */

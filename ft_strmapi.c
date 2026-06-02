@@ -1,31 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/28 14:45:42 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/01 12:05:11 by sasilves         ###   ########.fr       */
+/*   Created: 2026/06/02 15:43:49 by sasilves          #+#    #+#             */
+/*   Updated: 2026/06/02 15:45:07 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (c >= 'A' && c <= 'Z')
-	{
-		c = c + 32;
-	}
-	return (c);
+		
 }
-
-/* #include<unistd.h>
-
-int	main(void)
-{
-	char c;
-
-	c = ft_tolower('J');
-	write(1, &c, 1);
-	return(0);
-} */

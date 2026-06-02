@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/28 14:45:42 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/01 12:05:11 by sasilves         ###   ########.fr       */
+/*   Created: 2026/06/02 16:24:46 by sasilves          #+#    #+#             */
+/*   Updated: 2026/06/02 16:36:44 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
-{
-	if (c >= 'A' && c <= 'Z')
-	{
-		c = c + 32;
-	}
-	return (c);
-}
+#include<unistd.h>
 
-/* #include<unistd.h>
-
-int	main(void)
+void ft_putnbr_fd(int n, int fd)
 {
 	char c;
+	long l;
 
-	c = ft_tolower('J');
-	write(1, &c, 1);
+	l = n;
+	if(n < 0)
+	{
+		write(fd, "-", 1);
+		l = -l;
+	}
+	if(l >= 10)
+	{
+		ft_putnbr_fd(l/10, fd);
+	}
+	c = (l % 10) + '0';
+	write(fd, &c, 1);
+}
+
+int main(void)
+{
+	int n;
+
+	n = -563325;
+	ft_putnbr_fd(n, 1);
 	return(0);
-} */
+}
