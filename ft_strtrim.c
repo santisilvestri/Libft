@@ -6,19 +6,20 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 15:14:12 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/02 15:00:59 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/02 17:20:01 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h>
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (str[i])
+	while (s[i])
 		i++;
 	return (i);
 }
@@ -30,11 +31,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if (s[i] == (char)c)
+	if ((char)c == '\0')
 		return ((char *)&s[i]);
 	return (NULL);
 }
@@ -70,11 +71,31 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 int	main(void)
 {
-	char	*res;
+	char	*result;
 
-	res = ft_strtrim("   hola mundo   ", " ");
-	printf("Resultado: [%s]\n", res);
-	free(res);
+	result = ft_strtrim("...hola mundo...", ".");
+	if (!result)
+		return (1);
+	printf("Resultado: '%s'\n", result);
+	free(result);
+
+	result = ft_strtrim("   hola mundo   ", " ");
+	if (!result)
+		return (1);
+	printf("Resultado: '%s'\n", result);
+	free(result);
+
+	result = ft_strtrim("xxxyhola mundoyxxx", "xy");
+	if (!result)
+		return (1);
+	printf("Resultado: '%s'\n", result);
+	free(result);
+
+	result = ft_strtrim("aaaaaaa", "a");
+	if (!result)
+		return (1);
+	printf("Resultado: '%s'\n", result);
+	free(result);
 
 	return (0);
 }
