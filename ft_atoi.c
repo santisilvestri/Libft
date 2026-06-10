@@ -6,9 +6,11 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 10:32:58 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/01 12:01:32 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/05 17:39:15 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
@@ -34,13 +36,13 @@ int	ft_atoi(const char *nptr)
 	}
 	return (num * sig);
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+/* int	main(void)
 {
-	char str[]= "     -456845641";
+	char	str[] = "   -1298abc";
 
-	printf("%d", ft_atoi(str));
-	return(0);
+	printf("atoi:    %d\n", atoi(str));
+	printf("ft_atoi: %d\n", ft_atoi(str));
+
+	return (0);
 } */

@@ -6,21 +6,20 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 11:58:44 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/01 12:04:49 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/05 15:33:28 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
-	{
 		c = c - 32;
-	}
 	return (c);
 }
-/* #include<unistd.h>
 
-int	main(void)
+/* int	main(void)
 {
 	char c;
 

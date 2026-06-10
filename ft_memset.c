@@ -6,36 +6,36 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 10:23:15 by sasilves          #+#    #+#             */
-/*   Updated: 2026/05/27 09:53:18 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/05 12:02:52 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char	*ptr;
+	unsigned char	*str;
 	size_t			i;
 
 	i = 0;
-	ptr = (unsigned char *)s;
+	str = (unsigned char *)s;
 	while (i < n)
 	{
-		ptr[i] = c;
+		str[i] = (unsigned char)c;
 		i++;
 	}
-	return (ptr);
+	return (s);
 }
 
-/* #include <stdio.h>
-#include <string.h>
-
-int main (void)
+/* int	main(void)
 {
-	char str[] = "Hello World";
-	char str1[] = "Hello World";
-	memset(str, 'x', 3);
-	ft_memset(str1, 'x', 5);
-	printf("%s\n", str);
-	printf("%s\n", str1);
+	char str1[20] = "Hello world";
+	char str2[20] = "Hello world";
+
+	memset(str1, 'X', 4);
+	ft_memset(str2, 'X', 4);
+	printf("memset:    %s\n", str1);
+	printf("ft_memset: %s\n", str2);
+
+	return (0);
 } */

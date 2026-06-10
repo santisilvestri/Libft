@@ -6,11 +6,11 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 08:45:21 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/01 12:09:40 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/05 17:06:18 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -30,13 +30,12 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 
-/* #include<stdio.h>
-
-int	main(void)
+/* int	main(void)
 {
-	char str1[]= "Hola mundo";
-	char str2[]= "Hola munde";
+	char	s1[] = {'a', 'b', '\0', 'c'};
+	char	s2[] = {'a', 'b', '\0', 'd'};
 
-	printf("%d \n", ft_memcmp(str1,str2,10));
-	return(0);
+	printf("ft_memcmp: %d\n", ft_memcmp(s1, s2, 4));
+	printf("memcmp:    %d\n", memcmp(s1, s2, 4));
+	return (0);
 } */

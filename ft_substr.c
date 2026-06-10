@@ -6,22 +6,11 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 14:05:52 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/01 14:49:46 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/06 11:22:24 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -51,16 +40,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
-/* #include <stdio.h>
-
-int	main(void)
+/* int	main(void)
 {
 	char *sub;
 
-	sub = ft_substr("hola mundo", 20, 20);
-	if (!sub)
-		return (1);
-	printf("Resultado: %s\n", sub);
+	sub = ft_substr("Hello world", 6, 5);
+	printf("Sub: %s\n", sub);
 	free(sub);
 	return (0);
 } */

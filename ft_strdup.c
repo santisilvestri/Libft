@@ -6,17 +6,16 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 11:33:43 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/01 12:00:06 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/06 10:29:29 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *src)
 {
-	int		i;
 	char	*dup;
+	size_t	i;
 
 	i = 0;
 	while (src[i])
@@ -36,21 +35,17 @@ char	*ft_strdup(const char *src)
 
 /* int	main(void)
 {
-	char	*original;
-	char	*copia;
+	char	*text;
+	char	*ft_copy;
+	char	*copy;
 
-	original = "Hola mundo";
-	copia = ft_strdup(original);
-
-	if (!copia)
-	{
-		printf("Error al reservar memoria\n");
-		return (1);
-	}
-
-	printf("Original: %s\n", original);
-	printf("Copia: %s\n", copia);
-
-	free(copia);
+	text = "Hello world";
+	ft_copy = ft_strdup(text);
+	copy = strdup(text);
+	printf("Text:     	%s\n", text);
+	printf("ft_strdup:	%s\n", ft_copy);
+	printf("strdup:		%s\n", copy);
+	free(ft_copy);
+	free(copy);
 	return (0);
 } */

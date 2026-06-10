@@ -1,41 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/03 11:05:58 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/09 16:52:23 by sasilves         ###   ########.fr       */
+/*   Created: 2026/06/04 15:11:58 by sasilves          #+#    #+#             */
+/*   Updated: 2026/06/09 17:57:53 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next != NULL)
+	if (!lst || !f)
+		return ;
+	while (lst)
+	{
+		f(lst->content);
 		lst = lst->next;
-	return (lst);
+	}
+}
+/* static void	print_content(void *content)
+{
+	printf("%s\n", (char *)content);
 }
 
-/* int	main(void)
+int	main(void)
 {
-	t_list *last;
-	t_list *node1;
-	t_list *node2;
-	t_list *node3;
+	t_list	*list;
+	t_list	*node1;
+	t_list	*node2;
+	t_list	*node3;
 
+	list = NULL;
 	node1 = ft_lstnew("Node 1");
 	node2 = ft_lstnew("Node 2");
 	node3 = ft_lstnew("Node 3");
-	node1->next = node2;
-	node2->next = node3;
-	last = ft_lstlast(node1);
-	printf("Last content: %s \n", (char *)last->content);
-	printf("Last next: %p \n", last->next);
+	ft_lstadd_back(&list, node1);
+	ft_lstadd_back(&list, node2);
+	ft_lstadd_back(&list, node3);
+	ft_lstiter(list, print_content);
 	free(node3);
 	free(node2);
 	free(node1);

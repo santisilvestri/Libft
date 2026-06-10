@@ -6,17 +6,17 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 14:50:28 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/01 15:12:00 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/06 11:46:01 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 
 	if (!s1 || !s2)
 		return (NULL);
@@ -39,3 +39,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[i] = '\0';
 	return (str);
 }
+/* int	main(void)
+{
+	char *result;
+
+	result = ft_strjoin("Hello ", "World");
+	printf("%s\n", result);
+	free(result);
+	return (0);
+} */

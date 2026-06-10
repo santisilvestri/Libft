@@ -6,44 +6,35 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 10:45:15 by sasilves          #+#    #+#             */
-/*   Updated: 2026/05/27 11:17:58 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/05 15:06:07 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	len;
 
-	len = 0;
-	while (src[len])
-		len++;
 	i = 0;
-	if (size > 0)
+	if (size == 0)
+		return (ft_strlen(src));
+	while (src[i] && i < size - 1)
 	{
-		while (src[i] && i < size - 1)
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		dst[i] = src[i];
+		i++;
 	}
-	return (len);
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
-
-/* #include <stdio.h>
-
+/* 
 int	main(void)
 {
-	char test[] = "Hello World";
-	char test2[50];
-	size_t result;
+	char src[] = "Hello world";
+	char dst[20];
+	size_t ret;
 
-	result = ft_strlcpy(test2, test, 3);
-
-	printf("dst: %s\n", test2);
-	printf("return: %zu\n", result);
+	ret = ft_strlcpy(dst, src, 1);
+	printf("ft_strlcpy: dst = \"%s\", return (= %zu\n", dst, ret));
 	return (0);
 } */

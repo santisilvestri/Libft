@@ -6,9 +6,11 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 10:21:11 by sasilves          #+#    #+#             */
-/*   Updated: 2026/05/26 13:29:09 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/05 11:06:02 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
@@ -17,11 +19,9 @@ int	ft_isalpha(int c)
 	return (0);
 }
 
-/* #include <stdio.h>
-
-int	main(void)
+/* int	main(void)
 {
-	char	c;
+	char c;
 
 	printf("Enter a char:");
 	scanf("%c", &c);

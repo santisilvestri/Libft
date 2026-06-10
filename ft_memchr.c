@@ -6,17 +6,17 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 08:25:23 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/01 12:09:16 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/05 16:55:28 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t				i;
 	const unsigned char	*str;
 	unsigned char		ch;
+	size_t				i;
 
 	i = 0;
 	str = (const unsigned char *)s;
@@ -30,19 +30,13 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 
-/* #include<stdio.h>
-
-int	main(void)
+/* int	main(void)
 {
-	char	str[] = "Hola mundo";
-	char	*result;
+	char str[] = "Hello world";
 
-	result = ft_memchr(str, 'm', 10);
-
-	if (result != NULL)
-		printf("Encontrado: %c\n", *result);
-	else
-		printf("No encontrado\n");
-
+	printf("memchr:    %p\n", memchr(str, 'w', 11));
+	printf("ft_memchr: %p\n", ft_memchr(str, 'w', 11));
+	printf("memchr:    %s\n", (char *)memchr(str, 'w', 11));
+	printf("ft_memchr: %s\n", (char *)ft_memchr(str, 'w', 11));
 	return (0);
 } */

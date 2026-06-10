@@ -6,13 +6,15 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 10:22:58 by sasilves          #+#    #+#             */
-/*   Updated: 2026/05/26 11:58:38 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/05 11:38:23 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
@@ -20,12 +22,11 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-/* #include <stdio.h>
-
-int	main(void)
+/* int	main(void)
 {
-	char str[] = "Hello World";
+	char *str = "Hello World";
 
-	printf("%d", ft_strlen(str));
+	printf("strlen:    %zu\n", strlen(str));
+	printf("ft_strlen: %zu\n", ft_strlen(str));
 	return (0);
 } */

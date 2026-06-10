@@ -6,53 +6,57 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 11:07:43 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/01 12:06:05 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/06 10:08:07 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void			*ptr;
+	unsigned char	*ptr;
 	size_t			total;
-	unsigned char	*str;
 	size_t			i;
 
+	if (size != 0 && nmemb > SIZE_MAX / size)
+		return (NULL);
 	total = nmemb * size;
 	ptr = malloc(total);
 	if (!ptr)
 		return (NULL);
-	str = (unsigned char *)ptr;
 	i = 0;
 	while (i < total)
 	{
-		str[i] = 0;
+		ptr[i] = 0;
 		i++;
 	}
-	return (ptr);
+	return ((void *)ptr);
 }
 
-/* #include<stdio.h>
-
-int	main(void)
+/* int	main(void)
 {
-	int	*arr;
-	int	i;
+	int *a;
+	int *b;
+	size_t i;
 
-	arr = ft_calloc(5, sizeof(int));
-	if (arr == NULL)
-	{
-		printf("Error al reservar memoria\n");
-		return (1);
-	}
+	a = ft_calloc(5, sizeof(int));
+	b = calloc(5, sizeof(int));
+	printf("ft_calloc: 	");
 	i = 0;
 	while (i < 5)
 	{
-		printf("arr[%d] = %d\n", i, arr[i]);
+		printf("%d ", a[i]);
 		i++;
 	}
-	free(arr);
+	printf("\ncalloc:		");
+	i = 0;
+	while (i < 5)
+	{
+		printf("%d ", b[i]);
+		i++;
+	}
+	printf("\n");
+	free(a);
+	free(b);
 	return (0);
 } */

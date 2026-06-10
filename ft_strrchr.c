@@ -6,11 +6,11 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 15:30:57 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/01 12:07:33 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/05 16:09:25 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -28,26 +28,11 @@ char	*ft_strrchr(const char *s, int c)
 	return (NULL);
 }
 
-/* #include<stdio.h>
-
-int	main(void)
+/* int	main(void)
 {
-	char	*str;
-	char	*result;
+	char	str[] = "Hello world";
 
-	str = "Hola mundo";
-
-	result = ft_strrchr(str, 'k');
-
-	if (result != NULL)
-	{
-		printf("Caracter encontrado: %c\n", *result);
-		printf("String desde la ultima aparicion: %s\n", result);
-	}
-	else
-	{
-		printf("Caracter no encontrado\n");
-	}
-
+	printf("strrchr:    %s\n", strrchr(str, 'o'));
+	printf("ft_strrchr: %s\n", ft_strrchr(str, 'o'));
 	return (0);
 } */

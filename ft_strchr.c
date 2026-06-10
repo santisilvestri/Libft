@@ -6,11 +6,11 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 14:53:31 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/01 12:08:10 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/05 15:53:16 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -19,7 +19,7 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			return ((char *)&s[i]);
 		i++;
 	}
@@ -28,21 +28,18 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-/* #include <stdio.h>
-
-int	main(void)
+/* int	main(void)
 {
-	char	*str;
-	char	*result;
+	char str[] = "Hello world";
 
-	str = "Hola mundo";
-
-	result = ft_strchr(str, 'l');
-
-	if (result != NULL)
-		printf("Caracter encontrado: %c\n", *result);
-	else
-		printf("Caracter no encontrado\n");
-
+	printf("Case 1: search for = 'o'\n");
+	printf("strchr:    %s\n", strchr(str, 'o'));
+	printf("ft_strchr: %s\n", ft_strchr(str, 'o'));
+	printf("\nCase 2: search for = 'z'\n");
+	printf("strchr:    %p\n", strchr(str, 'z'));
+	printf("ft_strchr: %p\n", ft_strchr(str, 'z'));
+	printf("\nCase 3: search for = '\\0'\n");
+	printf("strchr:    %p\n", strchr(str, '\0'));
+	printf("ft_strchr: %p\n", ft_strchr(str, '\0'));
 	return (0);
 } */

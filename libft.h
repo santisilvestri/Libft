@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 08:52:03 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/03 09:25:24 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/09 18:28:21 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define LIBFT_H
 
 # include <stdint.h>
+# include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
 # include <unistd.h>
 
 typedef struct s_list
@@ -42,7 +44,8 @@ char				*ft_strrchr(const char *s, int c);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
-char				*ft_strnstr(const char *big, const char *little, size_t len);
+char				*ft_strnstr(const char *big, const char *little,
+						size_t len);
 int					ft_atoi(const char *nptr);
 void				*ft_calloc(size_t nmemb, size_t size);
 char				*ft_strdup(const char *s);
@@ -65,6 +68,7 @@ void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
+						void (*del)(void *));
 
 #endif
