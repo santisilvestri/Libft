@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 15:59:44 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/06 17:39:03 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:08:37 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,3 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
-/*
-int	main(void)
-{
-	char str[] = "Hello World";
-
-	ft_putstr_fd(str, 1);
-} */

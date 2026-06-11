@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 15:14:12 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/06 13:17:49 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:05:28 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[i] = '\0';
 	return (str);
 }
-/* 
-int	main(void)
-{
-	char *result;
-
-	result = ft_strtrim("zzzzHello Worldzzzzz", "z");
-	printf("%s\n", result);
-	free(result);
-	return (0);
-} */

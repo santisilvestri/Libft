@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 10:32:58 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/05 17:39:15 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:18:39 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (num * sig);
 }
-
-/* int	main(void)
-{
-	char	str[] = "   -1298abc";
-
-	printf("atoi:    %d\n", atoi(str));
-	printf("ft_atoi: %d\n", ft_atoi(str));
-
-	return (0);
-} */

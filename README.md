@@ -2,39 +2,95 @@
 
 # Libft
 
-## Descripción
+## Description
 
-**Libft** es una librería escrita en lenguaje C que implementa un conjunto de funciones de propósito general, inspiradas en funciones estándar de la `libc` y ampliadas con utilidades adicionales para el manejo de cadenas, memoria, conversión de datos, escritura en descriptores de archivo y listas enlazadas.
+**Libft** is a custom C library developed as part of the 42 curriculum.
+The goal of this project is to recreate a set of standard C library functions, implement additional utility functions, and build a small linked list API.
 
-El objetivo principal del proyecto es construir una librería propia que pueda ser reutilizada en futuros proyectos del cursus de 42, comprendiendo en profundidad el comportamiento interno de funciones fundamentales del lenguaje C.
+By coding these functions from scratch, this project helps develop a deeper understanding of memory management, string manipulation, character handling, pointers, dynamic allocation, and basic data structures in C.
 
-La librería se compila como un archivo estático llamado:
+The final result is a static library named:
 
 ```bash
 libft.a
 ```
 
-Este archivo puede enlazarse posteriormente con otros programas en C.
+This library can be reused in future C projects throughout the 42 cursus.
 
 ---
 
-## Características principales
+## Project Structure
 
-La librería incluye funciones organizadas en tres grupos principales:
+All source files are located at the root of the repository.
 
-1. Funciones equivalentes a funciones clásicas de la `libc`.
-2. Funciones adicionales para manipulación de cadenas, memoria y salida.
-3. Funciones para trabajar con listas enlazadas mediante la estructura `t_list`.
+Expected files include:
 
-Todas las funciones siguen los prototipos definidos en el subject del proyecto y respetan las restricciones técnicas indicadas por 42.
+```bash
+Makefile
+libft.h
+ft_*.c
+```
+
+The `libft.h` header contains all function prototypes and the linked list structure definition.
+
+The project is compiled into the static library `libft.a`.
 
 ---
 
-## Estructura de la librería
+## Instructions
 
-### Funciones de clasificación de caracteres
+To compile the library, run:
 
-Estas funciones analizan caracteres y devuelven `1` si cumplen la condición evaluada, o `0` en caso contrario.
+```bash
+make
+```
+
+This will generate:
+
+```bash
+libft.a
+```
+
+The project is compiled using:
+
+```bash
+cc -Wall -Wextra -Werror
+```
+
+The Makefile includes the following mandatory rules:
+
+```bash
+make        # Builds libft.a
+make all    # Builds libft.a
+make clean  # Removes object files
+make fclean # Removes object files and libft.a
+make re     # Rebuilds the library from scratch
+```
+
+If bonus functions are included, they can be compiled with:
+
+```bash
+make bonus
+```
+
+---
+
+## Library Overview
+
+The library is divided into three main parts:
+
+1. Libc functions
+2. Additional utility functions
+3. Linked list functions
+
+---
+
+## Part 1 - Libc Functions
+
+This section contains reimplementations of standard C library functions.
+Each function keeps the same behavior as the original one, but uses the `ft_` prefix.
+
+### Character Checking Functions
 
 ```c
 int ft_isalpha(int c);
@@ -44,270 +100,252 @@ int ft_isascii(int c);
 int ft_isprint(int c);
 ```
 
-### Funciones de conversión de caracteres
+These functions check whether a character belongs to a specific category, such as alphabetic, numeric, printable, or ASCII.
+
+### String Functions
 
 ```c
+size_t ft_strlen(const char *s);
+size_t ft_strlcpy(char *dst, const char *src, size_t size);
+size_t ft_strlcat(char *dst, const char *src, size_t size);
+char *ft_strchr(const char *s, int c);
+char *ft_strrchr(const char *s, int c);
+int ft_strncmp(const char *s1, const char *s2, size_t n);
+char *ft_strnstr(const char *big, const char *little, size_t len);
+char *ft_strdup(const char *s);
+```
+
+These functions handle common string operations such as calculating length, copying, concatenating, searching, comparing, and duplicating strings.
+
+### Memory Functions
+
+```c
+void *ft_memset(void *b, int c, size_t len);
+void ft_bzero(void *s, size_t n);
+void *ft_memcpy(void *dst, const void *src, size_t n);
+void *ft_memmove(void *dst, const void *src, size_t len);
+void *ft_memchr(const void *s, int c, size_t n);
+int ft_memcmp(const void *s1, const void *s2, size_t n);
+void *ft_calloc(size_t count, size_t size);
+```
+
+These functions manipulate raw memory blocks, compare memory regions, search inside memory, and allocate initialized memory.
+
+### Conversion Functions
+
+```c
+int ft_atoi(const char *str);
 int ft_toupper(int c);
 int ft_tolower(int c);
 ```
 
-Estas funciones convierten caracteres entre minúsculas y mayúsculas cuando corresponde.
+These functions convert strings to integers and handle uppercase/lowercase character conversion.
 
 ---
 
-## Funciones de memoria
+## Part 2 - Additional Functions
 
-La librería implementa funciones para inicializar, copiar, mover, comparar y buscar datos en bloques de memoria.
+This section contains useful functions that are not part of the standard libc, or that behave differently from standard functions.
 
 ```c
-void    *ft_memset(void *s, int c, size_t n);
-void    ft_bzero(void *s, size_t n);
-void    *ft_memcpy(void *dst, const void *src, size_t n);
-void    *ft_memmove(void *dst, const void *src, size_t n);
-void    *ft_memchr(const void *s, int c, size_t n);
-int     ft_memcmp(const void *s1, const void *s2, size_t n);
-void    *ft_calloc(size_t nmemb, size_t size);
+char *ft_substr(char const *s, unsigned int start, size_t len);
+char *ft_strjoin(char const *s1, char const *s2);
+char *ft_strtrim(char const *s1, char const *set);
+char **ft_split(char const *s, char c);
+char *ft_itoa(int n);
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void ft_striteri(char *s, void (*f)(unsigned int, char *));
+void ft_putchar_fd(char c, int fd);
+void ft_putstr_fd(char *s, int fd);
+void ft_putendl_fd(char *s, int fd);
+void ft_putnbr_fd(int n, int fd);
 ```
 
-Estas funciones son esenciales para trabajar con memoria dinámica, buffers y estructuras de datos en C.
+### Purpose of These Functions
+
+- `ft_substr` creates a substring from a given string.
+- `ft_strjoin` joins two strings into a new allocated string.
+- `ft_strtrim` removes selected characters from the beginning and end of a string.
+- `ft_split` splits a string into an array of strings using a delimiter.
+- `ft_itoa` converts an integer into a string.
+- `ft_strmapi` creates a new string by applying a function to each character.
+- `ft_striteri` applies a function to each character of a string in place.
+- `ft_putchar_fd` writes a character to a file descriptor.
+- `ft_putstr_fd` writes a string to a file descriptor.
+- `ft_putendl_fd` writes a string followed by a newline to a file descriptor.
+- `ft_putnbr_fd` writes an integer to a file descriptor.
 
 ---
 
-## Funciones de cadenas
+## Part 3 - Linked List Functions
 
-La librería incluye funciones para medir, copiar, concatenar, buscar y comparar cadenas de caracteres.
-
-```c
-size_t  ft_strlen(const char *s);
-size_t  ft_strlcpy(char *dst, const char *src, size_t size);
-size_t  ft_strlcat(char *dst, const char *src, size_t size);
-char    *ft_strchr(const char *s, int c);
-char    *ft_strrchr(const char *s, int c);
-int     ft_strncmp(const char *s1, const char *s2, size_t n);
-char    *ft_strnstr(const char *big, const char *little, size_t len);
-char    *ft_strdup(const char *s1);
-```
-
-También se incluye la conversión de cadenas numéricas a enteros:
-
-```c
-int ft_atoi(const char *nptr);
-```
-
----
-
-## Funciones adicionales
-
-Estas funciones amplían la funcionalidad básica de la librería, permitiendo crear nuevas cadenas, dividir texto, aplicar funciones sobre caracteres y convertir enteros a cadenas.
-
-```c
-char    *ft_substr(char const *s, unsigned int start, size_t len);
-char    *ft_strjoin(char const *s1, char const *s2);
-char    *ft_strtrim(char const *s1, char const *set);
-char    **ft_split(char const *s, char c);
-char    *ft_itoa(int n);
-char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void    ft_striteri(char *s, void (*f)(unsigned int, char *));
-```
-
-Estas funciones utilizan memoria dinámica cuando corresponde, por lo que el usuario de la librería debe liberar la memoria devuelta cuando ya no sea necesaria.
-
----
-
-## Funciones de salida
-
-Estas funciones permiten escribir caracteres, cadenas y números en un descriptor de archivo determinado.
-
-```c
-void    ft_putchar_fd(char c, int fd);
-void    ft_putstr_fd(char *s, int fd);
-void    ft_putendl_fd(char *s, int fd);
-void    ft_putnbr_fd(int n, int fd);
-```
-
-Ejemplos de descriptores comunes:
-
-```text
-0   stdin
-1   stdout
-2   stderr
-```
-
----
-
-## Listas enlazadas
-
-La librería define la estructura `t_list` para trabajar con listas enlazadas simples.
+The project also includes a basic linked list API based on the following structure:
 
 ```c
 typedef struct s_list
 {
-    void            *content;
-    struct s_list   *next;
-}   t_list;
+	void			*content;
+	struct s_list	*next;
+} t_list;
 ```
 
-Cada nodo contiene un puntero genérico `void *content`, lo que permite almacenar distintos tipos de datos, y un puntero `next` hacia el siguiente nodo de la lista.
+The `content` pointer allows each node to store any type of data, while `next` points to the next node in the list.
 
-### Funciones de listas
+### List Functions
 
 ```c
-t_list  *ft_lstnew(void *content);
-void    ft_lstadd_front(t_list **lst, t_list *new);
-int     ft_lstsize(t_list *lst);
-t_list  *ft_lstlast(t_list *lst);
-void    ft_lstadd_back(t_list **lst, t_list *new);
-void    ft_lstdelone(t_list *lst, void (*del)(void *));
-void    ft_lstclear(t_list **lst, void (*del)(void *));
-void    ft_lstiter(t_list *lst, void (*f)(void *));
-t_list  *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list *ft_lstnew(void *content);
+void ft_lstadd_front(t_list **lst, t_list *new);
+int ft_lstsize(t_list *lst);
+t_list *ft_lstlast(t_list *lst);
+void ft_lstadd_back(t_list **lst, t_list *new);
+void ft_lstdelone(t_list *lst, void (*del)(void *));
+void ft_lstclear(t_list **lst, void (*del)(void *));
+void ft_lstiter(t_list *lst, void (*f)(void *));
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 ```
 
-Estas funciones permiten crear, recorrer, modificar, eliminar y transformar listas enlazadas de forma controlada.
+### Purpose of These Functions
+
+- `ft_lstnew` creates a new list node.
+- `ft_lstadd_front` adds a node at the beginning of a list.
+- `ft_lstsize` counts the number of nodes of a list.
+- `ft_lstlast` returns the last node of a list.
+- `ft_lstadd_back` adds a node at the end of a list.
+- `ft_lstdelone` deletes one node using a given delete function.
+- `ft_lstclear` deletes and frees an entire list.
+- `ft_lstiter` applies a function to the content of each node.
+- `ft_lstmap` creates a new list by applying a function to each node content.
 
 ---
 
-## Instrucciones de compilación
+## Usage Example
 
-Para compilar la librería, ejecutar:
-
-```bash
-make
-```
-
-Esto genera el archivo estático:
-
-```bash
-libft.a
-```
-
-Para eliminar los archivos objeto generados durante la compilación:
-
-```bash
-make clean
-```
-
-Para eliminar los archivos objeto y la librería compilada:
-
-```bash
-make fclean
-```
-
-Para recompilar completamente el proyecto:
-
-```bash
-make re
-```
-
----
-
-## Uso de la librería
-
-Para utilizar `libft.a` en otro programa, se debe incluir el header correspondiente:
+After compiling the library, it can be used in another C file by including the header:
 
 ```c
 #include "libft.h"
 ```
 
-Luego, compilar enlazando la librería:
-
-```bash
-cc -Wall -Wextra -Werror main.c libft.a
-```
-
-Ejemplo básico:
+Example:
 
 ```c
 #include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 int main(void)
 {
-    ft_putendl_fd("Hello, Libft!", 1);
-    return (0);
+	char *str;
+
+	str = ft_strdup("Hello, Libft!");
+	if (!str)
+		return (1);
+	printf("%s\n", str);
+	free(str);
+	return (0);
 }
 ```
 
-Compilación:
+Compile it with:
 
 ```bash
-cc -Wall -Wextra -Werror main.c libft.a
+cc -Wall -Wextra -Werror main.c libft.a -o test
 ```
 
-Ejecución:
+Then run:
 
 ```bash
-./a.out
-```
-
-Salida esperada:
-
-```text
-Hello, Libft!
+./test
 ```
 
 ---
 
-## Requisitos técnicos
+## Technical Requirements
 
-El proyecto respeta las siguientes condiciones:
+This project follows the 42 technical requirements:
 
-- Código escrito en lenguaje C.
-- Compilación con las flags `-Wall -Wextra -Werror`.
-- Uso de `cc` como compilador.
-- Generación de la librería mediante `ar`.
-- Archivo final `libft.a` creado en la raíz del repositorio.
-- Ausencia de variables globales.
-- Uso de funciones auxiliares `static` cuando corresponde.
-- Gestión correcta de memoria dinámica.
-- Makefile con las reglas obligatorias:
-  - `NAME`
-  - `all`
-  - `clean`
-  - `fclean`
-  - `re`
+- The project is written in C.
+- The code follows the 42 Norm.
+- No global variables are used.
+- Helper functions are declared as `static` when needed.
+- Memory allocated on the heap is properly freed when necessary.
+- The library is created using `ar`.
+- `libtool` is not used.
+- The static library `libft.a` is created at the root of the repository.
+- The Makefile does not relink unnecessarily.
 
 ---
 
-## Archivos principales
+## Testing
 
-```text
-Makefile
-libft.h
-ft_*.c
+Test files are not part of the final submission, but they can be useful during development.
+
+Possible testing strategies include:
+
+- Comparing `ft_` functions with their original libc equivalents.
+- Testing edge cases such as empty strings, `NULL` pointers where applicable, zero sizes, and negative numbers.
+- Checking memory leaks with tools such as:
+
+```bash
+valgrind
 ```
 
-Todos los archivos fuente se encuentran en la raíz del repositorio, de acuerdo con las instrucciones del proyecto.
+Example:
+
+```bash
+valgrind --leak-check=full ./test
+```
 
 ---
 
-## Recursos
+## Resources
 
-Para el desarrollo y comprensión de este proyecto se pueden consultar las siguientes referencias:
+The following resources were useful for understanding the concepts behind this project:
 
-- Manual de C para funciones estándar:
-  - `man strlen`
-  - `man memset`
-  - `man memcpy`
-  - `man memmove`
-  - `man calloc`
-  - `man atoi`
+- The C Programming Language, Brian W. Kernighan and Dennis M. Ritchie.
+- Linux manual pages:
 
-- Documentación sobre memoria dinámica:
-  - `man malloc`
-  - `man free`
+```bash
+man strlen
+man memset
+man memcpy
+man memmove
+man calloc
+man strdup
+```
 
-- Documentación sobre escritura en descriptores de archivo:
-  - `man write`
-
-- Documentación sobre creación de librerías estáticas:
-  - `man ar`
-
-- *The C Programming Language*, Brian W. Kernighan & Dennis M. Ritchie.
+- 42 School documentation and project subject.
+- Peer discussions and code reviews during the learning process.
+- Standard C library documentation.
+- GNU C Library documentation.
+- BSD string function documentation for functions such as `strlcpy` and `strlcat`.
 
 ---
 
-## Estado del proyecto
+## AI Usage
 
-Proyecto desarrollado como primera librería personal en C dentro del cursus de 42.
+Artificial intelligence tools were used only as a support resource for documentation and learning purposes.
 
-La librería está pensada para servir como base reutilizable en futuros proyectos, facilitando el trabajo con memoria, cadenas, conversión de datos, salida por descriptores de archivo y estructuras dinámicas como listas enlazadas.
+AI was used to help:
+
+- Structure this README file.
+- Improve English wording and clarity.
+- Summarize the purpose of the library.
+- Organize the list of implemented functions.
+- Explain the role of each part of the project.
+
+AI was not used as a replacement for understanding or implementing the project logic.
+All source code must be written, reviewed, tested, and understood by the student.
+
+---
+
+## Author
+
+Created by:
+
+```bash
+sasilves
+```
+
+42 Madrid.

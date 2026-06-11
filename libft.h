@@ -6,17 +6,16 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 08:52:03 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/09 18:28:21 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 11:32:39 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stddef.h>
 # include <stdint.h>
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
 
 typedef struct s_list

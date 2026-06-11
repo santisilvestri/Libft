@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 08:45:21 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/05 17:06:18 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:17:03 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-/* int	main(void)
-{
-	char	s1[] = {'a', 'b', '\0', 'c'};
-	char	s2[] = {'a', 'b', '\0', 'd'};
-
-	printf("ft_memcmp: %d\n", ft_memcmp(s1, s2, 4));
-	printf("memcmp:    %d\n", memcmp(s1, s2, 4));
-	return (0);
-} */

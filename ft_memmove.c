@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 09:54:17 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/10 09:40:48 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:19:43 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
-/* int	main(void)
-{
-	char	str1[] = "abcdef";
-	char	str2[] = "abcdef";
-
-	printf("Antes str1: 	%s\n", str1);
-	printf("Despues str2:   %s\n", str2);
-	ft_memmove(str1 + 2, str1, 3);
-	memmove(str2 + 2, str2, 3);
-	printf("ft_memmove: 	%s\n", str1);
-	printf("memmove:	%s\n", str2);
-	return (0);
-} */

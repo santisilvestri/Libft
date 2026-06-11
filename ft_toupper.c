@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 11:58:44 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/05 15:33:28 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 11:54:32 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,3 @@ int	ft_toupper(int c)
 		c = c - 32;
 	return (c);
 }
-
-/* int	main(void)
-{
-	char c;
-
-	c = ft_toupper('a');
-	write(1, &c, 1);
-	return (0);
-} */

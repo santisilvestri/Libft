@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 10:23:15 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/05 12:02:52 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 11:50:42 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-
-/* int	main(void)
-{
-	char str1[20] = "Hello world";
-	char str2[20] = "Hello world";
-
-	memset(str1, 'X', 4);
-	ft_memset(str2, 'X', 4);
-	printf("memset:    %s\n", str1);
-	printf("ft_memset: %s\n", str2);
-
-	return (0);
-} */

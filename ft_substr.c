@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 14:05:52 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/06 11:22:24 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:20:16 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
-/* int	main(void)
-{
-	char *sub;
-
-	sub = ft_substr("Hello world", 6, 5);
-	printf("Sub: %s\n", sub);
-	free(sub);
-	return (0);
-} */

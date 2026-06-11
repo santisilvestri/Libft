@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 11:23:05 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/05 15:23:30 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 11:53:57 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[i + j] = '\0';
 	return (i + ft_strlen(src));
 }
-/* 
-int	main(void)
-{
-	char dst[20] = "Hello ";
-	char src[] = "my name is Santiago";
-	size_t ret;
-
-	ret = ft_strlcat(dst, src, 15);
-	printf("dst: %s\n", dst);
-	printf("return: %zu\n", ret);
-	return (0);
-} */

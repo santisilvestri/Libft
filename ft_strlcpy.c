@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 10:45:15 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/05 15:06:07 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 11:53:08 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (ft_strlen(src));
 }
-/* 
-int	main(void)
-{
-	char src[] = "Hello world";
-	char dst[20];
-	size_t ret;
-
-	ret = ft_strlcpy(dst, src, 1);
-	printf("ft_strlcpy: dst = \"%s\", return (= %zu\n", dst, ret));
-	return (0);
-} */

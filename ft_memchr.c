@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 08:25:23 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/05 16:55:28 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:19:37 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-/* int	main(void)
-{
-	char str[] = "Hello world";
-
-	printf("memchr:    %p\n", memchr(str, 'w', 11));
-	printf("ft_memchr: %p\n", ft_memchr(str, 'w', 11));
-	printf("memchr:    %s\n", (char *)memchr(str, 'w', 11));
-	printf("ft_memchr: %s\n", (char *)ft_memchr(str, 'w', 11));
-	return (0);
-} */

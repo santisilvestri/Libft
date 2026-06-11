@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 14:45:42 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/06 16:54:54 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 11:54:49 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,3 @@ int	ft_tolower(int c)
 		c = c + 32;
 	return (c);
 }
-/* 
-int	main(void)
-{
-	char c;
-
-	c = ft_tolower('J');
-	write(1, &c, 1);
-	return (0);
-} */

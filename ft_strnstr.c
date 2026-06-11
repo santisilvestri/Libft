@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 10:00:39 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/06 18:01:55 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:20:09 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
-/* int	main(void)
-{
-	char big[] = "My name is Santiago";
-	char little[] = "is";
-
-	printf("%s\n", ft_strnstr(big, little, 20));
-	printf("%s\n", ft_strnstr(big, little, 20));
-	return (0);
-} */

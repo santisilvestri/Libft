@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:24:46 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/06 17:50:02 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:10:20 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,3 @@ void	ft_putnbr_fd(int n, int fd)
 	c = (l % 10) + '0';
 	write(fd, &c, 1);
 }
-
-/* int	main(void)
-{
-	int	n;
-
-	n = -563325;
-	ft_putnbr_fd(n, 1);
-	return (0);
-} */

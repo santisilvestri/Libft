@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 10:22:58 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/05 11:38:23 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 11:50:07 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,3 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
-
-/* int	main(void)
-{
-	char *str = "Hello World";
-
-	printf("strlen:    %zu\n", strlen(str));
-	printf("ft_strlen: %zu\n", ft_strlen(str));
-	return (0);
-} */

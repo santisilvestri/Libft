@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 17:22:54 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/06 15:09:58 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:05:56 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,19 +104,3 @@ char	**ft_split(char const *s, char c)
 	array[j] = NULL;
 	return (array);
 }
-
-/* int	main(void)
-{
-	char **result;
-	size_t i;
-
-	result = ft_split("  Hello my name is Santiago   ", ' ');
-	i = 0;
-	while (result[i])
-	{
-		printf("%s\n", result[i]);
-		i++;
-	}
-	free_mem(result, i);
-	return (0);
-} */

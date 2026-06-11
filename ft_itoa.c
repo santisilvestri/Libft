@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 15:01:54 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/06 15:47:19 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:19:17 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,3 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-
-/* int main(void)
-{
-	int n;
-
-	n = -99435;
-	printf("%s",ft_itoa(n));
-	return(0);
-} */

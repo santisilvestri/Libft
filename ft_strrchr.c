@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 15:30:57 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/05 16:09:25 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 11:56:35 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-/* int	main(void)
-{
-	char	str[] = "Hello world";
-
-	printf("strrchr:    %s\n", strrchr(str, 'o'));
-	printf("ft_strrchr: %s\n", ft_strrchr(str, 'o'));
-	return (0);
-} */

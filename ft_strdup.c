@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 11:33:43 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/06 10:29:29 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:00:26 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,3 @@ char	*ft_strdup(const char *src)
 	dup[i] = '\0';
 	return (dup);
 }
-
-/* int	main(void)
-{
-	char	*text;
-	char	*ft_copy;
-	char	*copy;
-
-	text = "Hello world";
-	ft_copy = ft_strdup(text);
-	copy = strdup(text);
-	printf("Text:     	%s\n", text);
-	printf("ft_strdup:	%s\n", ft_copy);
-	printf("strdup:		%s\n", copy);
-	free(ft_copy);
-	free(copy);
-	return (0);
-} */

@@ -6,7 +6,7 @@
 /*   By: sasilves <sasilves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 11:05:58 by sasilves          #+#    #+#             */
-/*   Updated: 2026/06/09 16:52:23 by sasilves         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:13:25 by sasilves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,3 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 	return (lst);
 }
-
-/* int	main(void)
-{
-	t_list *last;
-	t_list *node1;
-	t_list *node2;
-	t_list *node3;
-
-	node1 = ft_lstnew("Node 1");
-	node2 = ft_lstnew("Node 2");
-	node3 = ft_lstnew("Node 3");
-	node1->next = node2;
-	node2->next = node3;
-	last = ft_lstlast(node1);
-	printf("Last content: %s \n", (char *)last->content);
-	printf("Last next: %p \n", last->next);
-	free(node3);
-	free(node2);
-	free(node1);
-	return (0);
-} */
